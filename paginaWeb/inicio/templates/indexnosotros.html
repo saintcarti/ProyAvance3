@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Quienes Somos</title>
+    {% load static %}
+    <link rel="icon" href="{%static 'img/logoTeCuidoSecurity.jpg'%}">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{%static 'css/prueba.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>  
+</head>
+<body>
+  <style>
+    body{
+        background-image: url("{%static 'img/FondoTeCuidoSecurity.jpg'%}");
+    }
+  </style>
+  
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <div class="navbar-brand-image" >
+        <img src="{%static 'img/logoTeCuidoSecurity.jpg'%}" width="40" height="40" alt="logo2">
+        <h5 class="mb-0">TeCuidoSecurity</h5>
+      </div>
+      <a class="navbar-brand" href="{%url 'inicio'%}">Inicio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{%url 'galery'%}">Galeria</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'contacto'%}">Sobre nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'inventario'%}">Mercado</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'mantenerInventario'%}">Inventario</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="I" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Cuentas
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{%url 'login'%}">Iniciar sesion</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="{%url 'API'%}">
+              <img  class="gifmorty" src="{%static 'img/rickandmorty.gif'%}" alt="gifRM">
+            </a>
+          </li>     
+          <div id="clock" class="clock-container"></div>     
+        </ul>     
+      </div>
+    </div>
+  </nav>
+
+  <section class="content-section">
+    <div class="left-images">
+        <img src="{%static 'img/empresa1.jpg'%}" alt="Imagen izquierda 1" class="left-image">
+        <img src="{%static 'img/empresa2.jpg'%}" alt="Imagen izquierda 2" class="left-image">
+        <img src="{%static 'img/empresa7.jpg'%}" alt="Imagen izquierda 3" class="left-image">
+        <img src="{%static 'img/empresa8.jpg'%}" alt="Imagen izquierda 4" class="left-image">
+
+    </div>
+    <div class="p_about">
+        <h1 class="Mision">Quienes somos?</h1>
+        
+        <p class="Nosotros">
+            TeCuidoSecurity es una empresa joven y dinámica, fundada con la pasión y el compromiso de garantizar
+            la seguridad y la tranquilidad de nuestros clientes. Aunque llevamos solo 3 años en el mercado
+            hemos experimentado un crecimiento significativo y hemos establecido relaciones sólidas con una 
+            amplia base de clientes satisfechos.
+        </p>
+        
+        <h2 class="Vision"> Vision</h2>
+        <p class="seg_p">
+            En TeCuidoSecurity, nuestra visión es convertirnos en líderes reconocidos en la  <br>
+            industria de la seguridad electrónica, ofreciendo soluciones de vanguardia que  
+            establezcan nuevos estándares de excelencia y confiabilidad. Nos esforzamos por
+            seguir creciendo y expandiéndonos, manteniendo siempre nuestro compromiso con
+            la satisfacción del cliente y la innovación tecnológica.
+        </p>
+        
+        <h2 class="Mision">Mision</h2>
+        <p class="Valores"> La misión de TeCuidoSecurity es proporcionar a nuestros clientes
+            productos y servicios de seguridad electrónica de alta calidad que superen sus expectativas 
+            y les brinden tranquilidad y protección en su vida diaria. Nos comprometemos a seguir ofreciendo 
+            soluciones integrales y personalizadas, respaldadas por un equipo profesional y dedicado que se 
+            esfuerza por satisfacer las necesidades de seguridad de nuestros clientes en todo momento.
+            Con un enfoque en la innovación y la excelencia en el servicio, estamos decididos a ser el 
+            de confianza de nuestros clientes en su viaje hacia un entorno más seguro y protegido.
+            <br>-Integridad .- Actuamos con honestidad y transparencia en todas nuestras operaciones.<br>
+            -Innovación .- Constantemente buscamos mejorar y adaptar nuestras soluciones de seguridad. <br>
+            -Compromiso con el cliente .- Nos dedicamos a proporcionar un servicio excepcional y soluciones personalizadas.<br> 
+            -Responsabilidad social y ambiental .- Nos comprometemos a minimizar nuestro impacto ambiental y contribuir positivamente a las comunidades.
+        </p>
+        <h2 class="ubica">Ubicación</h2>
+        
+        <p class="ubi">
+            Proximamente tendremos local adherido a nuestra pequeña empresa. 
+        </p>
+    </div>
+    <div class="right-images">
+        <img src="{%static 'img/empresa4.jpg'%}" alt="Imagen derecha 1" class="right-image">
+        <img src="{%static 'img/empresa5.jpg'%}" alt="Imagen derecha 2" class="right-image">
+        <img src="{%static 'img/empresa6.jpg'%}" alt="Imagen derecha 3" class="right-image">
+        <img src="{%static 'img/empresa9.jpg'%}" alt="Imagen derecha 4" class="right-image">
+    </div>
+</section>
+
+<div class="video-container">
+    <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/LCGAC0xHFjI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+<footer>
+    <div class="info">
+        <img src="{%static 'img/logoTeCuidoSecurity.jpg'%}" alt="Logo de la empresa">
+        <div class="contactos">
+            <h3>Hecho por Xavier Liberona</h3>
+            <h3>y Joaquin Osses</h3>
+            <h3>@copyright Derechos reservados</h3>
+        </div>
+    </div>
+    <div class="redes">
+        <h3>Contactanos por redes sociales:</h3>
+        <a href="https://web.whatsapp.com/" target="_blank"><img src="{%static 'img/whatsapp_logo_icon_186881.png'%}" alt="Facebook"></a>
+        <a href="https://www.facebook.com/" target="_blank"><img src="{%static 'img/facebook.png'%}" alt="Facebook"></a>
+        <a href="https://www.instagram.com/" target="_blank"><img src="{%static 'img/Instagram-Icon.png'%}" alt="Instagram"></a>
+        <a href="https://www.google.com/intl/es-419/gmail/about/" target="_blank"><img src="{%static 'img/gmail.png'%}" alt="Gmail"></a>
+    </div>
+</footer>
+
+<script>
+  function updateClock() {
+
+      var now = new Date();
+      var hours = now.getHours();
+      var minutes = now.getMinutes();
+      var seconds = now.getSeconds();
+
+
+      if (hours < 10) {
+          hours = '0' + hours;
+      }
+      if (minutes < 10) {
+          minutes = '0' + minutes;
+      }
+      if (seconds < 10) {
+          seconds = '0' + seconds;
+      }
+
+
+      document.getElementById('clock').innerHTML = hours + ':' + minutes + ':' + seconds;
+  }
+
+  updateClock();
+  setInterval(updateClock, 1000);
+</script>
+</body>
+</html>

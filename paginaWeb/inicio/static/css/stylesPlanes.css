@@ -1,0 +1,266 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body{
+	background-image: url('../img/FondoTeCuidoSecurity.jpg');
+}
+
+
+.gifmorty{
+	max-width: 40px;
+	mix-blend-mode: multiply;
+	border-radius: 48%;
+}
+    
+
+nav {
+	max-width: 85%; 
+	margin: auto;
+	font-size: 18px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	background-color: #085066;
+	padding: 5px 20px;
+	border-radius: 5px; 
+}
+.container-fluid {
+	box-shadow: 7px 13px 37px rgb(220, 200, 180);
+	margin-top: 10px; 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 100%; 
+	padding: 10px; 
+	border-radius: 5px; 
+	background-color: #fff; 
+}
+
+.d-flex{
+	margin-left: -20px;
+}
+
+
+
+.navbar-brand ,
+.nav-link,
+.dropdown-item{
+	font-size: 20px;
+	color: black!important;
+	padding: 10px 20px;
+	border-radius: 7px;
+	border-color: #085066!important;
+	transition: background-color 0.3s;
+}
+.dropdown-item a [href="inicoSesion.html"]{
+	border-radius: 5px;
+}
+.navbar-brand:hover,
+.nav-link:hover ,
+.dropdown-item:hover{
+	border-radius: 7px;
+	background-color: #085066!important; 
+	color: white!important;
+}
+
+.navbar-nav {
+	display: flex;
+	align-items: center;
+}
+
+.nav-item {
+	margin-right: 20px;
+}
+
+.navbar-brand:hover {
+    color: white;
+}
+
+.dropdown-menu {
+	background-color: transparent!important;
+}
+.dropdown-item{
+	background-color: #fff!important;
+	transition: background-color 0.3s;
+	border-radius: 7px!important;
+	display: flex;
+	margin: 5px;
+}
+.mb-0{
+	margin-top: 5px;
+	margin-left: 5px;
+	font-size: 18px;
+	color: #000!important;
+	font-weight: bold;
+}
+.d-flex{
+	margin-left: -20px;
+}
+.btn-outline-success{
+	border-color: #085066!important;
+	color: black!important;
+}
+.btn-outline-success:hover{
+	background-color: #085066!important;
+	color: white!important;
+}
+
+
+.menu-horizontal {
+	list-style: none;
+	display: flex;
+	justify-content: space-between; 
+}
+.menu-horizontal > li > a {
+    display: block;
+    padding: 15px 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.menu-horizontal > li:hover > a:hover {
+    background-color: #085066!important; 
+    border-radius: 5px; 
+    color: #ffffff;
+}
+
+.collapse{
+	display: grid;
+	justify-content: end;
+}
+.titulo {
+    text-align: center;
+    max-width: 200px;
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 20px; 
+    background-color: #085066;
+    color: white; 
+    margin: auto;
+    border: 2px solid white; 
+    border-radius: 15px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.imagen {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease;
+}
+
+.imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.imagen:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+
+
+.imagen:hover .descripcion {
+    background-color: #085066;
+    opacity: 1;
+    color: white;
+    
+}
+
+
+footer {
+
+	background-color:#003554; 
+    color: #003554;
+    text-align: center;
+    padding: 20px 0;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    margin-top: 145px;
+    
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+}
+.contacto h3{
+    color: white;
+}
+
+.info img {
+    width: 80px; 
+    margin-right: 20px;
+	margin-left: 20px;
+    border-radius: 15px;
+}
+
+.contacto h3 {
+    margin-bottom: 5px;
+    color: white; 
+    font-size: 15px; 
+}
+
+.redes h3 {
+    color: white; 
+    margin-bottom: 80px; 
+	font-size: 15px; 
+	margin-right: -190px;
+}
+
+.redes {
+    display: flex;
+    align-items: center; 
+}
+
+.redes a {
+    margin: 15px 0; 
+	margin-right: 15px;
+    display: inline-block;
+}
+
+.redes img {
+    width: 40px;
+    height: 40px;
+	border-radius: 15px;
+}
+
+#clock {
+    border: 2px solid white; 
+    background-color: #085066;
+    padding: 10px; 
+    color: white; 
+    font-size: 24px; 
+    border-radius: 10px; 
+}
