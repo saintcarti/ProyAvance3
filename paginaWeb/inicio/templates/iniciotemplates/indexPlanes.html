@@ -1,32 +1,65 @@
-{%extends 'base.html'%}
+{%extends 'base.html'%} {%block contenido%} {%load static%}
 
-{%block contenido%}
-{%load static%}
-
-<div class="titulo">Galeria de imagenes </div>
-	<div class="galeria">
-        <div class="imagen">
-            <img src="{%static 'img/kit4.jpg'%}" alt="Imagen 1">
-            <div class="descripcion"><hr>
-            </div>
-        </div>
-        <div class="imagen">
-            <img src="{%static 'img/CamaraBasica.jpg'%}" alt="Imagen 2">
-            <div class="descripcion"><hr>
-            </div>
-        </div>
-		<div class="imagen">
-            <img src="{%static 'img/CamaraMedio.jpg'%}" alt="Imagen 3">
-            <div class="descripcion"> <hr>
-            </div>
-        </div>
-		<div class="imagen">
-            <img src="{%static 'img/camarasPremium.jpg'%}" alt="Imagen 4">
-            <div class="descripcion"> <hr>
-            </div>
-        </div>
-
-
+<div class="titulo">Galería de imágenes</div>
+<div class="card-deck">
+  <div class="card">
+    <img
+      src="{% static 'img/kit4.jpg' %}"
+      class="card-img-top"
+      alt="Imagen 1"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Kit de seguridad básico</h5>
+      <p class="card-text">
+        Descripción del kit de seguridad básico y sus características.
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
-    
+  </div>
+  <div class="card">
+    <img
+      src="{% static 'img/CamaraBasica.jpg' %}"
+      class="card-img-top"
+      alt="Imagen 2"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Cámara de seguridad básica</h5>
+      <p class="card-text">
+        Descripción de la cámara de seguridad básica y sus especificaciones.
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <div class="card">
+    <img
+      src="{% static 'img/CamaraMedio.jpg' %}"
+      class="card-img-top"
+      alt="Imagen 3"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Cámara de seguridad de nivel medio</h5>
+      <p class="card-text">
+        Descripción de la cámara de seguridad de nivel medio y sus
+        características.
+      </p>
+      <a href="#" class="btn btn-primary">Xavi gei</a>
+    </div>
+  </div>
+  <div class="card">
+    <img
+      src="{% static 'img/camarasPremium.jpg' %}"
+      class="card-img-top"
+      alt="Imagen 4"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Cámaras de seguridad premium</h5>
+      <p class="card-text">
+        Descripción de las cámaras de seguridad premium y sus funciones
+        avanzadas.
+      </p>
+      <a href="#" class="btn btn-primary">Mauri igual</a>
+    </div>
+  </div>
+</div>
+
 {%endblock%}

@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -10,9 +11,14 @@ body {
     background-size: cover;
 }
 
+.navbar {
+    margin-bottom: 40px; 
+}
+
 .navbar-brand {
     display: flex;
     align-items: center;
+	
 }
 
 .navbar-brand img {
@@ -51,22 +57,23 @@ body {
 }
 
 .main-content {
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 800px; /* Ancho máximo para el contenido */
-    margin: auto; /* Centrar el contenido horizontalmente */
+    max-width: 800px; 
+    margin: auto; 
 }
 
 .main-content h1,
 .main-content h2,
 .main-content h3,
 .main-content p {
-    color: #333; /* Color del texto */
+    color: #333; 
 }
 
 footer {
+	margin-top: 40px;
     background-color: slategrey;
     color: #085066;
     padding: 20px 0;
@@ -195,4 +202,152 @@ footer {
     margin: 10px;
     border: 2px solid white;
     border-radius: 15px;
+}
+.gifmorty {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; 
+}
+
+
+/*---------------------------------------------------------------------------------------------------------
+Index Nosotros*/
+
+.left-images {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 10px;
+}
+
+.left-image {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    border-radius: 15px; 
+    border: 2px solid black; 
+}
+
+
+.right-images {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 10px;
+}
+
+.right-image {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 15px; 
+    border: 2px solid black; 
+}
+
+
+.content-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.p_about {
+    flex-grow: 1;
+    margin: 0 20px;
+    text-align: center; 
+}
+
+.p_about h1,
+.p_about h2,
+.p_about p {
+    text-align: center; 
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+
+.p_about {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/*---------------------------------------------------------------------------------------------------------
+Index Planes*/
+
+.titulo {
+    font-size: 2rem; 
+    font-weight: bold;
+    text-align: center; 
+    padding: 20px; 
+    border-radius: 10px; 
+    background-color: #085066; 
+    color: white; 
+    border: 2px solid #fff; 
+	margin: 10px auto 60px;
+    max-width: 50%; 
+}
+
+
+
+.card-deck {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; 
+}
+.card {
+    width: calc(33.33% - 20px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #666;
+}
+
+.card a.btn {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.card a.btn:hover {
+    background-color: #0056b3;
 }
