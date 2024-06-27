@@ -1,4 +1,4 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,get_object_or_404,redirect
 from .models import Camara
 from .forms import CamaraForm
 from django.contrib.auth.decorators import login_required
@@ -36,9 +36,14 @@ def editar_camara(request,id):
 
     return render(request,'crud/editar_camara.html',context)
 
+
 def crear_camara(request):
-    form = CamaraForm()
-    context = {
-        'form':form
-    }
-    return render(request,'crud/crear.html',context)
+    if request.method == 'POST':
+        camaraform = CamaraForm(request.POST,request.FILES)
+        if camaraform.is_valid():
+            camaraform.save()
+            return redirect('listado_camaras')
+    else:
+        camaraform = CamaraForm()
+
+    return render(request,'crud/crear.html',{'camaraform':camaraform})

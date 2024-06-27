@@ -2,11 +2,51 @@
 
 {%block contenido%}
   <div class="container">
-    <h1>Editar Camara</h1>
-    <a href ="{%url ''%}" class="btn btn-dark">Volver</a>
-    <div class="row justify-content-center">
-      <div
-    </div>
+    <h2>Crear Camara</h2>
+    <a href ="" class="btn btn-dark">Volver</a>
+    
+    <form method="post" id="formulario_crear" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="row">
+        <label for="{{ camaraform.field.name }}">
+          {{ camaraform.nombre.label }}
+        </label>
+        {{ camaraform.nombre }}
+      </div>
+      <div class="row">
+        <label for="{{ camaraform.field.name }}">
+          {{ camaraform.precio.label }}
+        </label>
+        {{ camaraform.precio }}
+      </div>
+      <div class="row">
+        <label for="{{ camaraform.field.name }}">
+          {{ camaraform.marca.label }}
+        </label>
+        {{ camaraform.marca }}
+      </div>
+      <div class="row">
+        <label for="{{ camaraform.field.name }}">
+          {{ camaraform.categoria.label }}
+        </label>
+        {{ camaraform.categoria }}
+      </div>
+      <div class="row">
+        <label for="{{ camaraform.field.name }}">
+          {{ camaraform.descripcion.label }}
+        </label>
+        {{ camaraform.descripcion }}
+      </div>
+      <div class="row">
+        <label for="{{ camaraform.field.name }}">
+          {{ camaraform.imagen.label }}
+        </label>
+        {{ camaraform.imagen }}
+      </div>
+      <input type="submit" value="Crear" class="btn btn-primary">
+      <a href="{%url 'inicio'%}" class="btn btn-success">Volver</a>
+
+    </form>
   </div>
 
 {%endblock%}
