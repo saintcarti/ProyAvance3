@@ -39,7 +39,7 @@
                 <a class="nav-link" href="{%url 'inventario'%}">Mercado</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{%url 'mantenerInventario'%}">Inventario</a>
+                <a class="nav-link" href="{%url 'listado_camaras'%}">Productos</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="I" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -55,10 +55,66 @@
                 </a>
               </li>
               <div id="clock" class="clock-container"></div>
+              {% if user.is_authenticated %}
+            <form id="formulario_logout" class="formulario__logout" method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button class="cerrarsesion"  type="submit">Cerrar sesión</button>
+            </form>
+
+                
+            <li style="margin-left: 15px;">Bienvenido {{ user.first_name }}!</li>
+                {% endif %}
             </ul>
           </div>
         </div>
       </nav>
       
+      {%block contenido%}
+
+      {%endblock%}
+      <script>
+        function updateClock() {
+    
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+    
+    
+            if (hours < 10) {
+                hours = '0' + hours;
+            }
+            if (minutes < 10) {
+                minutes = '0' + minutes;
+            }
+            if (seconds < 10) {
+                seconds = '0' + seconds;
+            }
+    
+    
+            document.getElementById('clock').innerHTML = hours + ':' + minutes + ':' + seconds;
+        }
+    
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+
+    <footer style="display: flex; justify-content: space-between;  position: absolute; bottom: 0; width: 100%; height: 150px; background-color: #085066;">
+        <div class="info">
+            <img src="{%static 'img/logoTeCuidoSecurity.jpg'%}" alt="Logo de la empresa">
+            <div class="contactos">
+                <h3>Hecho por Xavier Liberona</h3>
+                <h3>y Joaquin Osses</h3>
+                <h3>@copyright Derechos reservados</h3>
+            </div>
+        </div>
+        <div  class="redes">
+        <h3>Contactanos por redes sociales:</h3>
+        <a href="https://web.whatsapp.com/" target="_blank"><img src="{%static 'img/whatsapp_logo_icon_186881.png'%}" alt="Facebook"></a>
+        <a href="https://www.facebook.com/" target="_blank"><img src="{%static 'img/facebook.png'%}" alt="Facebook"></a>
+        <a href="https://www.instagram.com/" target="_blank"><img src="{%static 'img/Instagram-Icon.png'%}" alt="Instagram"></a>
+        <a href="https://www.google.com/intl/es-419/gmail/about/" target="_blank"><img src="{%static 'img/gmail.png'%}" alt="Gmail"></a>
+        </div>
+    </footer>
 </body>
 </html>

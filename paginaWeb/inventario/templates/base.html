@@ -55,6 +55,15 @@
                 </a>
               </li>
               <div id="clock" class="clock-container"></div>
+              {% if user.is_authenticated %}
+            <form id="formulario_logout" class="formulario__logout" method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button class="cerrarsesion"  type="submit">Cerrar sesión</button>
+            </form>
+
+                
+            <li style="margin-left: 15px;">Bienvenido {{ user.first_name }}!</li>
+                {% endif %}
             </ul>
           </div>
         </div>
@@ -90,7 +99,7 @@
         setInterval(updateClock, 1000);
     </script>
 
-    <footer style="position: absolute; bottom: 0; width: 100%; height: 140px;">
+    <footer style="display: flex; justify-content: space-between;  position: absolute; bottom: 0; width: 100%; height: 150px; background-color: #085066;">
         <div class="info">
             <img src="{%static 'img/logoTeCuidoSecurity.jpg'%}" alt="Logo de la empresa">
             <div class="contactos">
@@ -99,7 +108,7 @@
                 <h3>@copyright Derechos reservados</h3>
             </div>
         </div>
-        <div class="redes">
+        <div  class="redes">
         <h3>Contactanos por redes sociales:</h3>
         <a href="https://web.whatsapp.com/" target="_blank"><img src="{%static 'img/whatsapp_logo_icon_186881.png'%}" alt="Facebook"></a>
         <a href="https://www.facebook.com/" target="_blank"><img src="{%static 'img/facebook.png'%}" alt="Facebook"></a>
