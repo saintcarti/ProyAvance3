@@ -31,6 +31,12 @@ def iniciosesion(request):
         
     return render(request, 'registration/login.html')
 
+def registro(request):
+    return render(request, 'registration/register.html')
+
 def exit(request):
     logout(request)
     return redirect('inicio')
+
+def recuperar(request):
+    return render(request, 'registration/recuperar.html')

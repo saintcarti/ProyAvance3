@@ -1,92 +1,13 @@
 {%extends 'base.html'%} {%block contenido%} {%load static%}
 
-<nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-    <div class="navbar-brand-image">
-      <img
-        src="IMG/logoTeCuidoSecurity.jpg"
-        width="40"
-        height="40"
-        alt="logo2"
-      />
-      <h5 class="mb-0">TeCuidoSecurity</h5>
-    </div>
-    <a class="navbar-brand" href="index.html">Inicio</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="indexPlanes.html"
-            >Kits</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="indexnosotros.html">Sobre nosotros</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="I"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Cuentas
-          </a>
-          <ul class="dropdown-menu">
-            <li>
-              <a class="dropdown-item" href="InicoSesion.html"
-                >Iniciar sesion</a
-              >
-            </li>
-            <li>
-              <a class="dropdown-item" href="indexRegistro.html">Registrarse</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="recuperar.html"
-                >Cambiar contraseña</a
-              >
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Buscar: "
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
-      </form>
-    </div>
-  </div>
-</nav>
-<section class="form-register">
+
+<form class="form-register">
   <h4 class="text-recovery">Recuperar Contraseña</h4>
-  <input
-    class="controls"
-    type="text"
-    name="Correo"
-    id="Correo"
-    placeholder="Correo Electronico "
-  />
-  <input class="botons" type="submit" value="Enviar" />
+  <input class="controls" type="text" name="Correo" id="Correo" placeholder="Correo Electronico "/>
+  <input type="submit" value="Enviar" class="btn btn-dark" />
   <p>
-    Ya Tienes Cuenta?<a class="Boton-inicioSesion" href="InicoSesion.html"
-      >Inicia Sesion</a
-    >
+    Ya Tienes Cuenta?<a class="Boton-inicioSesion" href="{%url 'login'%}">Inicia Sesion</a>
   </p>
-</section>
+</form>
 
 {%endblock%}
