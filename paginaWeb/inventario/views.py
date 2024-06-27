@@ -28,12 +28,15 @@ def detalle_camara(request,id):
     return render(request,'crud/detalle_camara.html',context)
 
 def editar_camara(request,id):
-    camaras = Camara.objects.all()
+    camarasModificadas = Camara.objects.get(idCamara=id)
     context= {
-
-        'camaras':camaras
+        'form':CamaraForm(instance=camarasModificadas)
     }
-
+    if request.method=='POST':
+        formulario = CamaraForm(data=request.POST,instance=camarasModificadas)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('listado_camaras')
     return render(request,'crud/editar_camara.html',context)
 
 

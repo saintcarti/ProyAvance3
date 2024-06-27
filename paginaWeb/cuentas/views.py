@@ -3,6 +3,7 @@ from django.contrib.auth import logout
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from .models import UserProfile
+from .forms import RegistroUserForm
 
 
 
@@ -32,7 +33,18 @@ def iniciosesion(request):
     return render(request, 'registration/login.html')
 
 def registro(request):
-    return render(request, 'registration/register.html')
+    data={
+        'form':RegistroUserForm()
+    }
+    if request.method == 'POST':
+        formulario = RegistroUserForm(data=request.POST)
+        formulario.save()
+        user = authenticate(username=formulario.cleaned_data["username"],
+                            password=formulario.cleaned_data["password1"])
+        login(request,user)
+        return redirect('inicio')
+    
+    return render(request, 'registration/register.html',data)
 
 def exit(request):
     logout(request)
