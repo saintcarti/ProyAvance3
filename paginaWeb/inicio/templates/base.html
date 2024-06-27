@@ -93,38 +93,37 @@
                   class="gifmorty"
                   src="{% static 'img/rickandmorty.gif' %}"
                   alt="Rick and Morty"
-                  style="width: 30px; height: 30px"/>
+                  style="width: 30px; height: 30px"
+                />
               </a>
             </li>
             {% if user.is_authenticated %}
-          <form
-            id="formulario_logout"
-            class="d-flex"
-            method="post"
-            action="{% url 'logout' %}"
-          >
-            {% csrf_token %}
-            <button class="btn btn-outline-danger" type="submit">
-              Cerrar sesión
-            </button>
-          </form>
-          <li class="nav-item">
-            <span class="navbar-text ms-3"
-              >Bienvenido, {{ user.first_name }}!</span
+            <form
+              id="formulario_logout"
+              class="d-flex"
+              method="post"
+              action="{% url 'logout' %}"
             >
-          </li>
-          {% endif %}
+              {% csrf_token %}
+              <button class="btn btn-outline-danger" type="submit">
+                Cerrar sesión
+              </button>
+            </form>
+            <li class="nav-item">
+              <span class="navbar-text ms-3"
+                >Bienvenido, {{ user.first_name }}!</span
+              >
+            </li>
+            {% endif %}
           </ul>
           <div id="clock" class="clock-container"></div>
-          
         </div>
       </div>
     </nav>
 
     <div class="content">
       <div class="main-content container">
-        {% block contenido %}
-        {% endblock %}
+        {% block contenido %} {% endblock %}
       </div>
     </div>
 

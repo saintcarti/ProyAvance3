@@ -9,6 +9,7 @@
 body {
     background-image: url('../IMG/fondoTeCuidoSecurity.jpg');
     background-size: cover;
+    background-color: transparent;
 }
 
 .navbar {
