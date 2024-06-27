@@ -20,7 +20,6 @@
                     <th style= "padding: 10px;" scope="col">Ver</th>
                     <th style= "padding: 10px;" scope="col">Editar</th>
                     <th style= "padding: 10px;" scope="col">Eliminar</th>
-                    <th style= "padding: 10px;" scope="col">Crear</th>
 
 
                   </tr>
@@ -37,15 +36,18 @@
                     {%if camara.imagen%}
                         <td style= "padding: 20px;"><img  src="{{camara.imagen.url}}" style="height: 70px; width: 70px; border-radius: 8px;"></td>
                     {%else%}
-                        <td style= "padding: 20px;"><a>Producto sin imagen</a></td>
+                        <td style= "padding: 20px;"><img src=""></td>
                     {%endif%}
                     <td ><a href="{% url 'detalle_camara' id=camara.idCamara %}">Ver</a></td>
                     <td ><a href="{% url 'editar_camara' id=camara.idCamara%}">Editar</a></td>
-                    <td ><a href="">Eliminar</a></td>
-                    <td ><a href="{% url 'crear_camara'%}">Crear</a></td>
+                    <td ><a href="{%url 'eliminar_camara' camara.idCamara%}">Eliminar</a></td>
+                    
                 </tr>
+                
                 {%endfor%}
+                
                 </tbody>
+                <a href="{% url 'crear_camara'%}" class="btn btn-success">Crear</a>
               </table>
         </div>
     </div>

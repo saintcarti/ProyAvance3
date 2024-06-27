@@ -47,3 +47,8 @@ def crear_camara(request):
         camaraform = CamaraForm()
 
     return render(request,'crud/crear.html',{'camaraform':camaraform})
+
+def eliminar_camara(request,id):
+    camaraEliminada = Camara.objects.get(idCamara=id)
+    camaraEliminada.delete()
+    return redirect('listado_camaras')
