@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def inventario_view(request):
-    return render(request,'Inventario/Mercado.html')
+    return render(request,'vista/Mercado.html')
 
 def API(request):
     return render(request,'API/indexAPI.html')
