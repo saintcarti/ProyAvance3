@@ -93,13 +93,10 @@
                   class="gifmorty"
                   src="{% static 'img/rickandmorty.gif' %}"
                   alt="Rick and Morty"
-                  style="width: 30px; height: 30px"
-                />
+                  style="width: 30px; height: 30px"/>
               </a>
             </li>
-          </ul>
-          <div id="clock" class="clock-container"></div>
-          {% if user.is_authenticated %}
+            {% if user.is_authenticated %}
           <form
             id="formulario_logout"
             class="d-flex"
@@ -117,6 +114,9 @@
             >
           </li>
           {% endif %}
+          </ul>
+          <div id="clock" class="clock-container"></div>
+          
         </div>
       </div>
     </nav>

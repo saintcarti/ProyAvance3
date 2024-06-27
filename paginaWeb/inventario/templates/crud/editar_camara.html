@@ -1,49 +1,52 @@
 {%extends 'base.html'%}
 
 {%block contenido%}
-    <div style="display: flex; justify-content: center; align-items: center; max-width: 300px; max-height: 200px; margin: auto;background-color: #085066; padding: 20px; border: solid 2px white; border-radius: 15px; margin-bottom: 20px; margin-top: 20px;" class="conteiner">
-        <h1 style="text-align: center; color: white;">Editar camaras {{camara.nombreCamara}} {{camara.marca}}</h1>
-    </div>
 
     <div class="container">
-        <div class="row">
-            <table class="table-info">
-                <thead>
-                  <tr style="background-color:  #085066; border: solid 2px white; color: white;">
-                    <th style= "padding: 10px;" scope="col">ID</th>
-                    <th style= "padding: 10px;" scope="col">Nombre</th>
-                    <th style= "padding: 10px;" scope="col">Precio</th>
-                    <th style= "padding: 10px;" scope="col">marca</th>
-                    <th style= "padding: 10px;" scope="col">categoria</th>
-                    <th style= "padding: 10px;" scope="col">descripcion</th>
-                    <th style= "padding: 10px;" scope="col">imagen</th>
-                    <th style= "padding: 10px;" scope="col">Ver</th>
-                    <th style= "padding: 10px;" scope="col">Editar</th>
+        <h2>Editar camara {{camara.idCamara}} {{camara.nombreCamara}}</h2>
+        <form method="post" id="formulario2">
+            {%csrf_token%}
 
+            <div class="row">
+                <label for="camaraform.field.name">
+                    {{camaraform.nombreCamara.label}}
+                </label>
+                {{camaraform.nombreCamara}}
+            </div>
+            <div class="row">
+                <label for="{{ camaraform.field.name }}">
+                  {{ camaraform.precio.label }}
+                </label>
+                {{ camaraform.precio }}
+              </div>
+              <div class="row">
+                <label for="{{ camaraform.field.name }}">
+                  {{ camaraform.marca.label }}
+                </label>
+                {{ camaraform.marca }}
+              </div>
+              <div class="row">
+                <label for="{{ camaraform.field.name }}">
+                  {{ camaraform.categoria.label }}
+                </label>
+                {{ camaraform.categoria }}
+              </div>
+              <div class="row">
+                <label for="{{ camaraform.field.name }}">
+                  {{ camaraform.descripcion.label }}
+                </label>
+                {{ camaraform.descripcion }}
+              </div>
+              <div class="row">
+                <label for="{{ camaraform.field.name }}">
+                  {{ camaraform.imagen.label }}
+                </label>
+                {{ camaraform.imagen }}
+              </div>
 
-                  </tr>
-                </thead>
-                <tbody>
-                {%for camara in camaras%}
-                <tr style="background-color: #085066; border: solid 2px white; color: white;">
-                    <th style= "padding: 20px;" scope="row">{{camara.idCamara}}</th>
-                    <td style= "padding: 20px;"scope="row">{{camara.nombreCamara}}</td>
-                    <td style= "padding: 20px;"scope="row">{{camara.precio}}</td>
-                    <td style= "padding: 20px;"scope="row">{{camara.marca}}</td>
-                    <td style= "padding: 20px;"scope="row">{{camara.categoria}}</td>
-                    <td style= "padding: 20px;"scope="row">{{camara.descripcion}}</td>
-                    {%if camara.imagen%}
-                        <td style= "padding: 20px;"><img  src="{{camara.imagen.url}}" style="height: 70px; width: 70px; border-radius: 8px;"></td>
-                    {%else%}
-                        <td style= "padding: 20px;"><a href="#">Producto sin imagen</a></td>
-                    {%endif%}
-                    <td ><a href="{% url 'detalle_camara' id=camara.idCamara %}">Ver</a></td>
-                    <td ><a href="{% url 'editar_camara' id=camara.idCamara%}">Editar</a></td>
-                </tr>
-                {%endfor%}
-                </tbody>
-              </table>
-        </div>
+            <input type="submit" value="Editar" class="btn btn-primary">
+            <a href="{%url 'listado_camaras'%}" class="btn btn-success">Volver</a>
+        </form>
     </div>
     
 
