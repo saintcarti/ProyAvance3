@@ -3,6 +3,7 @@ from django.contrib.auth import logout
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from .models import UserProfile
+from .forms import CustomUserCreationForm
 
 
 
@@ -32,17 +33,18 @@ def iniciosesion(request):
     return render(request, 'registration/login.html')
 
 def registro(request):
+    data= {
+        'form':CustomUserCreationForm()
+    }
     if request.method == 'POST':
-        usuario = request.POST.get('username')
-        email = request.POST.get('email')
-        contraseña = request.POST.get('password1')
-        contraseña2 = request.POST.get('password2')
-        usuariocreate = [usuario, email, contraseña, contraseña2]
-        user = UserProfile.objects.create_user(usuariocreate)
-        user.save()
-        messages.success(request, 'Usuario creado correctamente')
-        return redirect('inicio')
-    return render(request, 'registration/register.html')
+        user_creation_form = CustomUserCreationForm(data=request.POST)
+        if user_creation_form.is_valid():
+            user_creation_form.save()
+
+            return redirect('inicio')
+        
+
+    return render(request, 'registration/register.html',data)
 
 def exit(request):
     logout(request)
