@@ -18,8 +18,11 @@
     <h5 class="card-title" style="text-align: center;">{{camara.nombreCamara}}</h5>
       <p class="card-text" style="text-align: center;">{{camara.descripcion}}</p>
     </div>
-    <button id="btn_comprar" style="display: grid; margin-left: 60px; max-width: 120px;" type="submit" class="btn btn-primary">Comprar</button>
+    <a href="{%url 'agregar' camara.idCamara%}" id="btn_comprar" style="display: grid; margin-left: 60px; max-width: 120px;" type="submit" class="btn btn-primary">Comprar</a>
   </div>
 {%endfor%}
+<div class="col-4">
+    {%include "carrito/carrito.html"%}
+</div>
 
 {%endblock%}

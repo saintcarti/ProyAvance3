@@ -1,6 +1,7 @@
 from django.shortcuts import render,get_object_or_404,redirect
-from .models import Camara,Categoria,Marca
+from .models import Camara,Boleta,DetalleBoleta,Categoria,Marca
 from .forms import CamaraForm
+from .compra import Carrito
 from django.contrib.auth.decorators import login_required
 
 
@@ -80,3 +81,51 @@ def eliminar_camara(request,id):
     camaraEliminada = Camara.objects.get(idCamara=id)
     camaraEliminada.delete()
     return redirect('listado_camaras')
+
+def agregar_producto(request,id):
+    carrito_compra = Carrito(request)
+    camara = Camara.objects.get(idCamara=id)
+    carrito_compra.agregar(camara = camara)
+    return redirect('inventario')
+
+def eliminar_producto(request,id):
+    carrito_compra = Carrito(request)
+    camara = Camara.objects.get(idCamara=id)
+    carrito_compra.eliminar(camara = camara)
+    return redirect('inventario')
+
+def restar_producto(request,id):
+    carrito_compra = Carrito(request)
+    camara = Camara.objects.get(idCamara=id)
+    carrito_compra.restar(camara = camara)
+    return redirect('inventario')
+
+def limpiar_carrito(request):
+    carrito_compra = Carrito(request)
+    carrito_compra.limpiar()
+    return redirect('inventario')
+
+def generarBoleta(request):
+    precio_total =0
+    for key, value in request.session['carrito'].items():
+        precio_total = precio_total + (int(value['precio']))*int(value['cantidad'])
+    boleta = Boleta(total = precio_total)
+    boleta.save()
+    productos = []
+    for key, value in request.session['carrito'].items():
+        camara = Camara.objects.get(idCamara= value['idCamara'])
+        cant = value['cantidad']
+        subtotal = cant*int(value['precio'])
+        detalle = DetalleBoleta(id_boleta= boleta, id_producto = camara, cantidad = cant,subtotal= subtotal)
+        detalle.save()
+        productos.append(detalle)
+    
+    datos = {
+        'productos':productos,
+        'fecha': boleta.fechaCompra,
+        'total': boleta.total
+    }
+    request.session['boleta'] = boleta.id_boleta
+    carrito = Carrito(request)
+    carrito.limpiar()
+    return render(request,'carrito/detallecarrito.html',datos)

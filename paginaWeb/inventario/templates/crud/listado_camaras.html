@@ -1,5 +1,5 @@
 {%extends 'base.html'%}
-
+{%load static%}
 {%block contenido%}
     <div style="display: flex; justify-content: center; align-items: center; max-width: 300px; max-height: 200px; margin: auto;background-color: #085066; padding: 20px; border: solid 2px white; border-radius: 15px; margin-bottom: 20px; margin-top: 20px;" class="conteiner">
         <h1 style="text-align: center; color: white;">Listado de camaras</h1>
@@ -39,17 +39,19 @@
                         {%else%}
                             <td style= "padding: 20px;"><img src=""></td>
                         {%endif%}
-                        <td ><a href="{% url 'detalle_camara' id=camara.idCamara %}">Ver</a></td>
-                        <td ><a href="{% url 'editar_camara' id=camara.idCamara%}">Editar</a></td>
-                        <td ><a href="{%url 'eliminar_camara' camara.idCamara%}">Eliminar</a></td>
+                        <td ><a href="{% url 'detalle_camara' id=camara.idCamara %}"><img src="{%static 'img/detalle.png'%}" style="max-width: 30px; max-height: 30px;"></a></td>
+                        <td ><a href="{% url 'editar_camara' id=camara.idCamara%}"><img src="{%static 'img/editar.png'%}" style="max-width: 30px; max-height: 30px;"></a></td>
+                        <td ><a href="{%url 'eliminar_camara' camara.idCamara%}"><img src="{%static 'img/borrar.jpg'%}" style="max-width: 30px; max-height: 30px;"></a></td>
                     
                     </tr>
                 
                     {%endfor%}
                 
                 </tbody>
-                <a href="{% url 'crear_camara'%}" class="btn btn-success">Crear</a>
               </table>
+              <br>
+              <a href="{% url 'crear_camara'%}" class="btn btn-success"><img src="{%static 'img/agregar.jpg'%}" style=" max-width: 30px; max-height: 30px;"></a>
+
             </div>
         </div>
     </div>
