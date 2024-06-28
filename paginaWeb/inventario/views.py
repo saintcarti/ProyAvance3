@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404,redirect
-from .models import Camara
+from .models import Camara,Categoria,Marca
 from .forms import CamaraForm
 from django.contrib.auth.decorators import login_required
 
@@ -10,7 +10,7 @@ def inventario_view(request):
 
 def API(request):
     return render(request,'API/indexAPI.html')
-
+@login_required
 def listado_camaras(request):
     camaras = Camara.objects.all()
     context = {
@@ -28,15 +28,15 @@ def detalle_camara(request,id):
     return render(request,'crud/detalle_camara.html',context)
 
 def editar_camara(request,id):
-    camarasModificadas = Camara.objects.get(idCamara=id)
+    camarasModificadas = get_object_or_404(Camara,idCamara= id)
+    categoria = Categoria.objects.all()
+    marca = Marca.objects.all()
     context= {
-        'form':CamaraForm(instance=camarasModificadas)
+        'camaraModificadas':camarasModificadas,
+        'categorias':categoria,
+        'marcas':marca
     }
-    if request.method=='POST':
-        formulario = CamaraForm(data=request.POST,instance=camarasModificadas)
-        if formulario.is_valid():
-            formulario.save()
-            return redirect('listado_camaras')
+    
     return render(request,'crud/editar_camara.html',context)
 
 
