@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout
-from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from .models import UserProfile
 from .forms import CustomUserCreationForm
@@ -41,13 +40,6 @@ def registro(request):
         if user_creation_form.is_valid():
             user_creation_form.save()
 
-<<<<<<< HEAD
-=======
-            user = authenticate(request,username=user_creation_form.cleaned_data['username'], 
-                                password=user_creation_form.cleaned_data['password1'])
-
-            login(request, user)
->>>>>>> 3baa037a6701f99c1d977a65d23848d97d9c03f8
             return redirect('inicio')
         
 

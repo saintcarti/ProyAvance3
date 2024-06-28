@@ -3,17 +3,13 @@
 <div class="titulo">Galería de imágenes</div>
 <div class="card-deck">
   <div class="card">
-    <img
-      src="{% static 'img/kit4.jpg' %}"
-      class="card-img-top"
-      alt="Imagen 1"
-    />
+    <img src="{% static 'img/kit4.jpg' %}" class="card-img-top" alt="Imagen 1"/>
     <div class="card-body">
       <h5 class="card-title">Kit de seguridad básico</h5>
       <p class="card-text">
         Descripción del kit de seguridad básico y sus características.
       </p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <a href="{%url 'inventario'%}" class="btn btn-primary">Ir a mercado</a>
     </div>
   </div>
   <div class="card">
@@ -27,7 +23,7 @@
       <p class="card-text">
         Descripción de la cámara de seguridad básica y sus especificaciones.
       </p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <a href="{%url 'inventario'%}" class="btn btn-primary">Ir a mercado</a>
     </div>
   </div>
   <div class="card">
@@ -42,7 +38,7 @@
         Descripción de la cámara de seguridad de nivel medio y sus
         características.
       </p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <a href="{%url 'inventario'%}" class="btn btn-primary">Ir a mercado</a>
     </div>
   </div>
   <div class="card">
@@ -57,7 +53,7 @@
         Descripción de las cámaras de seguridad premium y sus funciones
         avanzadas.
       </p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <a href="{%url 'inventario'%}" class="btn btn-primary">Ir a mercado</a>
     </div>
   </div>
 </div>

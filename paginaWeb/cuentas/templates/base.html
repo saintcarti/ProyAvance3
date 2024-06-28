@@ -121,11 +121,18 @@
       </div>
     </nav>
 
-    <div class="content">
-      <div class="main-content container">
-        {% block contenido %} {% endblock %}
+    <div style="display: flex; background-color: black;" class="content">
+      
+      <div style="background-color: black;" class="container">
+        
+        {% block contenido %}
+         
+
+          {% endblock %}
+      
       </div>
-    </div>
+    </div>      
+    
 
     <script>
       function updateClock() {

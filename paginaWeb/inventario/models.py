@@ -23,7 +23,7 @@ class Camara(models.Model):
     precio = models.IntegerField(verbose_name='Precio de la camara')
     marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
-    descripcion = models.CharField(max_length=100, verbose_name='Descripcion de la camara')
+    descripcion = models.CharField(max_length=500, verbose_name='Descripcion de la camara')
     imagen = models.ImageField(upload_to='imagenes',null=True,verbose_name='Imagen de la camara')
 
     def __str__(self):
