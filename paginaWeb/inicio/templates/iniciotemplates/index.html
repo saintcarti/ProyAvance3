@@ -1,5 +1,32 @@
 {%extends 'base.html'%} {%block contenido%} {%load static%}
 
+<style>
+a {
+  color: #001f3f; /* Azul oscuro */
+  text-decoration: none;
+  font-weight: 600;
+  margin: 10px;
+  display: inline-block;
+  animation: linkFadeIn 1s ease-in-out;
+}
+a:hover {
+    color: #001f3f; /* Azul oscuro */
+    text-decoration: underline;
+  }
+
+  @keyframes linkFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+</style>
 <div id="demo" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">

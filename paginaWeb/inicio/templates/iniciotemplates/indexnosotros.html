@@ -1,4 +1,29 @@
 {%extends 'base.html'%} {%block contenido%} {%load static%}
+<style>
+  a {
+    color: #001f3f; /* Azul oscuro */
+    text-decoration: none;
+    font-weight: 600;
+    margin: 10px;
+    display: inline-block;
+    animation: linkFadeIn 1s ease-in-out;
+  }
+  a:hover {
+    color: #001f3f; /* Azul oscuro */
+    text-decoration: underline;
+  }
+  @keyframes linkFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+</style>
 <section class="content-section">
   <div class="left-images">
     <img
@@ -66,7 +91,10 @@
     <h2 class="ubica">Ubicación</h2>
 
     <p class="ubi">
-      Proximamente tendremos local adherido a nuestra pequeña empresa.
+      Nuestra oficina principal se encuentra en la ciudad de Santiago, Chile,
+      pero también contamos con sucursales en otras ciudades del país. Si
+      desea visitarnos o ponerse en contacto con nosotros, no dude en
+      comunicarse a través de nuestro formulario de contacto o por teléfono.
     </p>
   </div>
   <div class="right-images">
@@ -94,7 +122,7 @@
 </section>
 
 <div class="video-container">
-  <iframe
+  <iframe 
     class="video"
     width="560"
     height="315"

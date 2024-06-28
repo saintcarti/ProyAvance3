@@ -4,6 +4,14 @@ from .forms import CamaraForm
 from .compra import Carrito
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.contrib.auth.decorators import user_passes_test
+
+def admin_required(login_url=None):
+    return user_passes_test(lambda u: u.is_active and u.is_staff, login_url=login_url)
+
+
+
+
 
 
 
@@ -19,7 +27,7 @@ def inventario_view(request):
 
 def API(request):
     return render(request,'API/indexAPI.html')
-@login_required
+@admin_required()
 def listado_camaras(request):
     camaras = Camara.objects.all()
     context = {
