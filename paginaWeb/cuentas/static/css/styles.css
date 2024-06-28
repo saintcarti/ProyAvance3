@@ -211,200 +211,72 @@ footer {
 
 
 /*---------------------------------------------------------------------------------------------------------
-Index Recuperar*/
-nav {
-	max-width: 85%; 
-	margin: auto;
-	font-size: 18px;
-	margin-top: 5px;
-	margin-bottom: 10px;
-	background-color: #085066;
-	padding: 5px 20px;
-	border-radius: 5px; 
-}
+recuperar */
 
-.menu-horizontal {
-	list-style: none;
-	display: flex;
-	justify-content: space-between; 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
-
-.menu-horizontal > li > a {
-	display: block;
-	padding: 15px 15px;
-	color: white;
-	text-decoration: none;
-	border-radius: 5px; 
-	transition: background-color 0.3s; 
-}
-
-
-
-.menu-vertical {
-	position: absolute;
-	display: none;
-	list-style: none;
-	width: 200px;
-	background-color: rgba(0, 0, 0, .5);
-	border-radius: 5px; 
-}
-
-.menu-horizontal li:hover .menu-vertical {
-	display: block;
-}
-.menu-vertical li a {
-	display: block;
-	color: white;
-	text-decoration: none;
-	padding: 15px 20px; 
-	border-radius: 5px; 
-}
-
-.container-fluid {
-	box-shadow: 7px 13px 37px rgb(220, 200, 180);
-	margin-top: 10px; 
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	max-width: 100%; 
-	padding: 10px; 
-	border-radius: 5px; 
-	background-color: #fff; 
-}
-
-.d-flex{
-	margin-left: -20px;
-}
-
-
-
-.navbar-brand ,
-.nav-link,
-.dropdown-item{
-	font-size: 20px;
-	color: black!important;
-	padding: 10px 20px;
-	border-radius: 7px;
-	border-color: #085066!important;
-	transition: background-color 0.3s;
-}
-.dropdown-item a [href="inicoSesion.html"]{
-	border-radius: 5px;
-}
-.navbar-brand:hover,
-.nav-link:hover ,
-.dropdown-item:hover{
-	border-radius: 7px;
-	background-color: #085066!important; 
-	color: white!important;
-}
-
-.navbar-nav {
-	display: flex;
-	align-items: center;
-}
-
-.nav-item {
-	margin-right: 20px;
-}
-
-.navbar-brand:hover {
-    color: white;
-}
-
-.dropdown-menu {
-	background-color: transparent!important;
-}
-.dropdown-item{
-	background-color: #fff!important;
-	transition: background-color 0.3s;
-	border-radius: 7px!important;
-	display: flex;
-	margin: 5px;
-}
-.mb-0{
-	margin-top: 5px;
-	margin-left: 5px;
-	font-size: 18px;
-	color: #000!important;
-	font-weight: bold;
-}
-.d-flex{
-	margin-left: -20px;
-}
-.btn-outline-success{
-	border-color: #085066!important;
-	color: black!important;
-}
-.btn-outline-success:hover{
-	background-color: #085066!important;
-	color: white!important;
-}
-
 
 .form-register {
-    width: 400px;
-    background: white;
-    padding: 30px;
-    margin: auto;
-    margin-top: 60px;
-    border-radius: 7px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    box-shadow: 7px 13px 37px rgb(200, 180, 220);
-    border:solid #085066;
-    margin-bottom: 25px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
 }
-  
-.form-register h4 {
-    font-size: 22px;
+
+.text-recovery {
+    text-align: center;
     margin-bottom: 20px;
-    color: #085066;
+    color: #333;
 }
-  
+
 .controls {
     width: 100%;
-    background: white;
     padding: 10px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    margin-bottom: 16px;
-    border: 1px solid #085066;
-    font-family: 'calibri';
-    font-size: 18px;
-    color: black;
-}
-.botons{
-    background-color: #085066!important;
-    border-radius: 5px;
+    box-sizing: border-box;
 }
 
-  
-.form-register p {
-    height: 40px;
+.controls:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.btn {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #23272b;
+}
+
+p {
+    margin-top: 15px;
     text-align: center;
-    font-size: 14px;
-    line-height: 40px;
-    color:#085066;
 }
-  
 
-.form-register a {
-    color: #085066;
+.Boton-inicioSesion {
+    color: #007bff;
     text-decoration: none;
 }
 
-  
-.form-register a:hover {
-    color: #085066;
+.Boton-inicioSesion:hover {
     text-decoration: underline;
 }
-  
-.form-register .botons {
-    width: 100%;
-    border: none;
-    padding: 12px;
-    color: white;
-    margin: 16px 0;
-    font-size: 16px;
-}
-
-

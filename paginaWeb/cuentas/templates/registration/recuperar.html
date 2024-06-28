@@ -1,6 +1,6 @@
-{%extends 'base.html'%} {%block contenido%} {%load static%}
+{% extends 'base.html' %} {% block contenido %} {% load static %}
 
-<form class="form-register" style="max-height: 300px">
+<form class="form-register">
   <h4 class="text-recovery">Recuperar Contraseña</h4>
   <input
     class="controls"
@@ -11,10 +11,10 @@
   />
   <input type="submit" value="Enviar" class="btn btn-dark" />
   <p>
-    Ya Tienes Cuenta?<a class="Boton-inicioSesion" href="{%url 'login'%}"
+    Ya Tienes Cuenta?<a class="Boton-inicioSesion" href="{% url 'login' %}"
       >Inicia Sesion</a
     >
   </p>
 </form>
 
-{%endblock%}
+{% endblock %}
