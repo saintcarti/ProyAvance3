@@ -1,5 +1,6 @@
 from django.db import models
 from distutils.command.upload import upload
+import datetime
 
 # Create your models here.
 class Categoria(models.Model):
@@ -31,3 +32,22 @@ class Camara(models.Model):
     
     def get_codigo_name(self):
         return f"Camara {self.nombreCamara} - {self.marca.nombreMarca} - {self.categoria.nombreCategoria}"
+    
+
+class Boleta(models.Model):
+    id_boleta = models.AutoField(primary_key=True)
+    total = models.BigIntegerField()
+    fechaCompra = models.DateTimeField(blank=False, null=False,default=datetime.datetime.now)
+
+    def __str__(self):
+        return str(self.id_boleta)
+    
+class DetalleBoleta(models.Model):
+    id_boleta = models.ForeignKey(Boleta,blank=True ,on_delete=models.CASCADE)
+    id_detalle_boleta = models.AutoField(primary_key=True)
+    id_producto = models.ForeignKey(Camara, on_delete=models.CASCADE)
+    cantidad = models.IntegerField()
+    subtotal = models.BigIntegerField()
+
+    def __str__(self):
+        return str(self.id_detalle_boleta)

@@ -49,11 +49,19 @@
       <h5 class="card-title">{{ camara.nombreCamara }}</h5>
       <p class="card-text">{{ camara.descripcion }}</p>
     </div>
+<<<<<<< HEAD
     <button id="btn_comprar" type="submit" class="btn btn-primary">
       Comprar
     </button>
   </div>
   {% endfor %}
+=======
+    <a href="{%url 'agregar' camara.idCamara%}" id="btn_comprar" style="display: grid; margin-left: 60px; max-width: 120px;" type="submit" class="btn btn-primary">Comprar</a>
+  </div>
+{%endfor%}
+<div class="col-4">
+    {%include "carrito/carrito.html"%}
+>>>>>>> 1511b35eb5c27d6ea47d1aadbfef95fa0b90e653
 </div>
 
 {% endblock %}
