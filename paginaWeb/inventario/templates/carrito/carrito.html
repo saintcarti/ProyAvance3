@@ -11,6 +11,7 @@
         <tbody>
         {% if request.session.carrito.items %}
             {% for key, value in request.session.carrito.items%}
+                {%if value.cantidad > 0 %}
             <tr>
                 <td id="marca_value" style="font-size:13px;">{{value.marca}}</td>
                 <td id="precio_value" style="font-size:13px;">{{value.precio}}</td>
@@ -24,6 +25,7 @@
                 <th scope="row">Total: </th>
                 <td colspan="2">$ {{value.total}}</td>
             </tr>
+            {%endif%}
             {% endfor %}
         {% else %}
             <tr>

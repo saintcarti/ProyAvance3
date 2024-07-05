@@ -14,10 +14,11 @@
                         <th style= "padding: 10px;" scope="col">ID</th>
                         <th style= "padding: 10px;" scope="col">Nombre</th>
                         <th style= "padding: 10px;" scope="col">Precio</th>
-                        <th style= "padding: 10px;" scope="col">marca</th>
-                        <th style= "padding: 10px;" scope="col">categoria</th>
-                        <th style= "padding: 10px;" scope="col">descripcion</th>
-                        <th style= "padding: 10px;" scope="col">imagen</th>
+                        <th style= "padding: 10px;" scope="col">Marca</th>
+                        <th style= "padding: 10px;" scope="col">Categoria</th>
+                        <th style= "padding: 10px;" scope="col">Descripcion</th>
+                        <th style= "padding: 10px;" scope="col">Imagen</th>
+                        <th style= "padding: 10px;" scope="col">Stock</th>
                         <th style= "padding: 10px;" scope="col">Ver</th>
                         <th style= "padding: 10px;" scope="col">Editar</th>
                         <th style= "padding: 10px;" scope="col">Eliminar</th>
@@ -37,8 +38,9 @@
                         {%if camara.imagen%} 
                             <td style= "padding: 20px;"><img  src="{{camara.imagen.url}}" style="height: 70px; width: 70px; border-radius: 8px;"></td>
                         {%else%}
-                            <td style= "padding: 20px;"><img src=""></td>
+                            <td style= "padding: 20px;"><img src="{%static 'img/sinfoto.jpg'%}"></td>
                         {%endif%}
+                        <td style= "padding: 20px;"scope="row">{{camara.stock}}</td>
                         <td ><a href="{% url 'detalle_camara' id=camara.idCamara %}"><img src="{%static 'img/detalle.png'%}" style="max-width: 30px; max-height: 30px;"></a></td>
                         <td ><a href="{% url 'editar_camara' id=camara.idCamara%}"><img src="{%static 'img/editar.png'%}" style="max-width: 30px; max-height: 30px;"></a></td>
                         <td ><a href="{%url 'eliminar_camara' camara.idCamara%}"><img src="{%static 'img/borrar.jpg'%}" style="max-width: 30px; max-height: 30px;"></a></td>

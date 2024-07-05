@@ -15,7 +15,9 @@
     <img src="{{camara.imagen.url}}" style="border: solid 2px black; border-radius: 7px;" class="card-img-top" alt="...">
     <div class="card-body">
     <h5 class="card-title" style="text-align: center;">{{camara.nombreCamara}}</h5>
-      <p class="card-text" style="text-align: center;">{{camara.descripcion}}</p>
+    <p class="card-text" style="text-align: center;">{{camara.descripcion}}</p>
+    <p class="card-text" style="text-align: center;">${{camara.precio}}</p>
+    <p class="card-text" style="text-align: center;">{{camara.stock}}</p>
     </div>
     <button id="btn_volver" style="display: grid; margin-left: 60px; max-width: 120px;" type="submit" class="btn btn-primary">Volver</button>
   </div>

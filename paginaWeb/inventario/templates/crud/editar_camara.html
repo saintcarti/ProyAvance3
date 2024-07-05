@@ -53,6 +53,11 @@
                 <input type="file" class="form-control" name="imagen" id="imagen" value="{{camara.imagen}}">
                 <small class="text-danger" id="imagen-error"></small>
               </div>
+            <div class="mb-3">
+                <label for="{{ camaraform.field.name }}">Stock</label>
+                <input type="text" class="form-control" name="stock" id="stock" value="{{camara.stock}}">
+                <small class="text-danger" id="stock-error"></small>
+            </div>
 
             <input type="submit" value="Editar" class="btn btn-primary">
             <a href="{%url 'listado_camaras'%}" class="btn btn-success">Volver</a>
