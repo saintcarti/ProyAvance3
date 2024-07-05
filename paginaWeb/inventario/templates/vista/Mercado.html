@@ -44,6 +44,8 @@
         <div class="card-body">
             <h5 class="card-title" style="text-align: center;">{{camara.nombreCamara}}</h5>
             <p class="card-text" style="text-align: center;">{{camara.descripcion}}</p>
+            <p class="card-text" style="text-align: center;">${{camara.precio}}</p>
+            <p class="card-text" style="text-align: center;">{{camara.stock}}</p>
             <a href="{%url 'agregar' camara.idCamara%}" id="btn_comprar" class="btn btn-primary">Comprar</a>
         </div>
     </div>

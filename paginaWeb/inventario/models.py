@@ -26,6 +26,8 @@ class Camara(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     descripcion = models.CharField(max_length=500, verbose_name='Descripcion de la camara')
     imagen = models.ImageField(upload_to='imagenes',null=True,verbose_name='Imagen de la camara')
+    stock = models.PositiveIntegerField(verbose_name='Stock de la camara' , default=0)
+
 
     def __str__(self):
         return self.get_codigo_name()

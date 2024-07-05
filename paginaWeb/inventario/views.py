@@ -116,33 +116,26 @@ def limpiar_carrito(request):
     return redirect('inventario')
 
 def generarBoleta(request):
-    if not request.session.get('carrito'):
-        messages.warning(request, 'El carrito está vacío. No puedes generar una boleta sin productos.')
-        return redirect('inventario')  # Redirige a la página del inventario o carrito
-
     precio_total = 0
-    for key, value in request.session['carrito'].items():
-        precio_total += int(value['precio']) * int(value['cantidad'])
+    for key , value in request.session['carrito'].items():
+        precio_total = precio_total + int(value['precio']) * int(value['cantidad'])
 
-    boleta = Boleta(total=precio_total)
+    boleta = Boleta(total = precio_total)
     boleta.save()
     productos = []
-
     for key, value in request.session['carrito'].items():
-        camara = Camara.objects.get(idCamara=value['idCamara'])
+        camara = Camara.objects.get(idCamara = value['idCamara'])
         cant = value['cantidad']
         subtotal = cant * int(value['precio'])
-        detalle = DetalleBoleta(id_boleta=boleta, id_producto=camara, cantidad=cant, subtotal=subtotal)
+        detalle = DetalleBoleta(user = request.user, id_boleta = boleta, id_producto = camara, cantidad = cant, subtotal = subtotal)
         detalle.save()
         productos.append(detalle)
-
     datos = {
         'productos': productos,
         'fecha': boleta.fechaCompra,
         'total': boleta.total
     }
-    
     request.session['boleta'] = boleta.id_boleta
     carrito = Carrito(request)
-    carrito.limpiar()
+    carrito.vaciar()
     return render(request, 'carrito/detallecarrito.html', datos)

@@ -5,14 +5,15 @@ from .models import Camara
 class CamaraForm(forms.ModelForm):
     class Meta:
         model = Camara
-        fields = ['nombreCamara','precio','marca','categoria','descripcion','imagen']
+        fields = ['nombreCamara','precio','marca','categoria','descripcion','imagen','stock']
         labels = {
             'nombreCamara': 'Nombre de camara',
             'precio':'Precio de camara',
             'marca':'Marca de camara',
             'categoria':'Categoria de camara',
             'descripcion':'Descripcion de camara',
-            'imagen':'Imagen de camara'
+            'imagen':'Imagen de camara',
+            'stock':'Stock de camara'
         }
         widgets = {
             'nombreCamara': forms.TextInput(
@@ -53,6 +54,13 @@ class CamaraForm(forms.ModelForm):
                 attrs={
                     'class':'form-control',
                     'id':'imagen'
+                }
+            ),
+            'stock': forms.NumberInput(
+                attrs={
+                    'class':'form-control',
+                    'placeholder':'Ingrese el stock de la camara',
+                    'id':'stock'
                 }
             )   
         }
